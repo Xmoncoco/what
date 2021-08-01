@@ -1,8 +1,8 @@
 
-const commando = require('discord.js-commando');
+import { Command } from 'discord.js-commando';
 
 
-module.exports = class kickCommand extends commando.Command{
+export default class kickCommand extends Command{
     constructor(client){
         super(client, {
             name: "kick",
@@ -19,9 +19,12 @@ module.exports = class kickCommand extends commando.Command{
 
         })
     }
-    async run (commandoMsg, userid) {
+    async run (commandoMsg, userId) {
         let guild = commandoMsg.guild;
-        console.log(guild.member.get(userid));
+        let member = guild.member.get(userId);
+        member.kick("kicking...")
+        .then(m => console.log("kicked " + userId))
+        .catch(err =>console.log("err"));
 
     }
 } 
