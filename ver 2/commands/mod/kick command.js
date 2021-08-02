@@ -22,9 +22,7 @@ export default class kickCommand extends Command{
     async run (commandoMsg, userId) {
         let guild = commandoMsg.guild;
         let member = guild.member.get(userId);
-        member.kick("kicking...")
-        .then(m => console.log("kicked " + userId))
-        .catch(err =>console.log("err"));
+        member.kick("ok")
 
     }
 } 
