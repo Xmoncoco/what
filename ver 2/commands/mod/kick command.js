@@ -1,5 +1,5 @@
 
-import { Command } from 'discord.js-commando';
+const Commando = require('discord.js-commando');
 
 
 export default class kickCommand extends Command{
